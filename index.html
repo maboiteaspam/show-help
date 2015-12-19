@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Show-help by maboiteaspam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Show-help</h1>
+      <h2 class="project-tagline">node module helpers to display help section given command line arguments</h2>
+      <a href="https://github.com/maboiteaspam/show-help" class="btn">View on GitHub</a>
+      <a href="https://github.com/maboiteaspam/show-help/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/maboiteaspam/show-help/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="show-help" class="anchor" href="#show-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>show-help</h1>
+
+<p>node module helpers to display help section given command line arguments</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<pre><code>npm i maboiteaspam/show-help --save
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">usage</span> () {<span class="pl-c">/*</span>
+<span class="pl-c">...some text...</span>
+<span class="pl-c">*/</span>}
+<span class="pl-k">var</span> pkg <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./package.json<span class="pl-pds">'</span></span>)
+<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>show-help<span class="pl-pds">'</span></span>)(usage, <span class="pl-smi">process</span>.<span class="pl-smi">argv</span>, pkg)</pre></div>
+
+<h2>
+<a id="usage-1" class="anchor" href="#usage-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h4>
+<a id="processargv" class="anchor" href="#processargv" aria-hidden="true"><span class="octicon octicon-link"></span></a>process.argv</h4>
+
+<p>Using the node <code>process.argv</code> value</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">usage</span> () {<span class="pl-c">/*</span>
+<span class="pl-c">module name</span>
+<span class="pl-c">        ...</span>
+<span class="pl-c"></span>
+<span class="pl-c">    Usage</span>
+<span class="pl-c">        ...</span>
+<span class="pl-c"></span>
+<span class="pl-c">    Options</span>
+<span class="pl-c">        ...</span>
+<span class="pl-c"></span>
+<span class="pl-c">    Examples</span>
+<span class="pl-c">        ...</span>
+<span class="pl-c">*/</span>}
+<span class="pl-k">var</span> pkg <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./package.json<span class="pl-pds">'</span></span>)
+<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>show-help<span class="pl-pds">'</span></span>)(usage, <span class="pl-smi">process</span>.<span class="pl-smi">argv</span>, pkg)
+<span class="pl-c">//require('show-help').tpl('%name %version\n\t%description\n\n%usage')(usage, process.argv, pkg)</span>
+</pre></div>
+
+<p>Which then, can be invoked in such fashion</p>
+
+<div class="highlight highlight-source-shell"><pre>module-name -h
+module-name --help</pre></div>
+
+<h4>
+<a id="minimist" class="anchor" href="#minimist" aria-hidden="true"><span class="octicon octicon-link"></span></a>minimist</h4>
+
+<p>Using <code>minimist</code> module to pre parse values</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">usage</span> () {<span class="pl-c">/*</span>
+<span class="pl-c">module name</span>
+<span class="pl-c">        ...</span>
+<span class="pl-c"></span>
+<span class="pl-c">    Usage</span>
+<span class="pl-c">        ...</span>
+<span class="pl-c"></span>
+<span class="pl-c">    Options</span>
+<span class="pl-c">        ...</span>
+<span class="pl-c"></span>
+<span class="pl-c">    Examples</span>
+<span class="pl-c">        ...</span>
+<span class="pl-c">*/</span>}
+<span class="pl-k">var</span> pkg  <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./package.json<span class="pl-pds">'</span></span>)
+<span class="pl-k">var</span> argv <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>minimist<span class="pl-pds">'</span></span>)(<span class="pl-smi">process</span>.<span class="pl-smi">argv</span>.<span class="pl-c1">slice</span>(<span class="pl-c1">2</span>));
+<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>show-help<span class="pl-pds">'</span></span>).<span class="pl-en">tpl</span>(<span class="pl-s"><span class="pl-pds">'</span>%name %version<span class="pl-cce">\n\t</span>%description<span class="pl-cce">\n\n</span>%usage<span class="pl-pds">'</span></span>)(usage, <span class="pl-smi">argv</span>.<span class="pl-smi">h</span><span class="pl-k">||</span><span class="pl-smi">argv</span>.<span class="pl-smi">help</span>, pkg)
+<span class="pl-c">//require('show-help')(usage, argv.h||argv.help, pkg)</span></pre></div>
+
+<p>Which then, can be invoked in such fashion</p>
+
+<div class="highlight highlight-source-shell"><pre>module-name -h
+module-name --help</pre></div>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Api</h2>
+
+<h4>
+<a id="showhelp" class="anchor" href="#showhelp" aria-hidden="true"><span class="octicon octicon-link"></span></a>showHelp</h4>
+
+<p><code>showHelp</code> is a <code>function</code> to display help and exits when needed,</p>
+
+<ul>
+<li><strong>showHelp(callable fn, object arg, object pkg, int code) void</strong></li>
+</ul>
+
+<p>When <code>typeof(arg)</code> is object, detect <code>(-h|--help)</code>,
+and figures out if <code>usage</code> should be displayed and program killed.</p>
+
+<p><code>pkg</code> is object of <code>package.json</code> file.</p>
+
+<ul>
+<li><strong>showHelp(callable fn, string arg, object pkg, int code) void</strong></li>
+</ul>
+
+<p>When <code>typeof(arg)</code> is string, and not <code>falsy</code>,
+it displays <code>usage</code> and kills the program with <code>code</code>.</p>
+
+<p><code>pkg</code> is object of <code>package.json</code> file.</p>
+
+<ul>
+<li><strong>showHelp(callable fn, bool arg, object pkg, int code) void</strong></li>
+</ul>
+
+<p>When <code>typeof(arg)</code> is bool, and not <code>falsy</code>,
+it displays <code>usage</code> and kills the program with <code>code</code>.</p>
+
+<p><code>pkg</code> is object of <code>package.json</code> file.</p>
+
+<h4>
+<a id="showhelptpl" class="anchor" href="#showhelptpl" aria-hidden="true"><span class="octicon octicon-link"></span></a>showHelp.tpl</h4>
+
+<p><code>showHelp.tpl</code> is a function to set a template to render usage,</p>
+
+<ul>
+<li><strong>showHelp(string newTpl) showHelp</strong></li>
+</ul>
+
+<p>set <code>tpl</code> to <code>newTpl</code>, then returns <code>showHelp</code> for chaining.</p>
+
+<h4>
+<a id="showhelpraw" class="anchor" href="#showhelpraw" aria-hidden="true"><span class="octicon octicon-link"></span></a>showHelp.raw</h4>
+
+<p><code>showHelp.raw</code> is a function to parse a string
+as a command line input. It detects <code>-h|--help</code> and invoke <code>showHelp.parsed</code>.</p>
+
+<ul>
+<li><strong>showHelp.raw(callable fn, object pkg, string arg) bool</strong></li>
+</ul>
+
+<p>When <code>arg.match(/-h|--help/)</code> is not <code>falsy</code>, it renders and displays <code>usage</code>.</p>
+
+<h4>
+<a id="showhelpparsed" class="anchor" href="#showhelpparsed" aria-hidden="true"><span class="octicon octicon-link"></span></a>showHelp.parsed</h4>
+
+<p><code>showHelp.parsed</code> is a function to invoke <code>showHelp.print</code> when <code>arg</code> is not <code>falsy</code>.</p>
+
+<ul>
+<li><strong>showHelp.parsed(callable fn, object pkg, string arg) bool</strong></li>
+</ul>
+
+<p>When <code>arg</code> is not <code>falsy</code>, it renders and displays <code>usage</code>.</p>
+
+<h4>
+<a id="showhelpprint" class="anchor" href="#showhelpprint" aria-hidden="true"><span class="octicon octicon-link"></span></a>showHelp.print</h4>
+
+<p><code>showHelp.print</code> is a function to render <code>template</code>
+given <code>multilen(fn)</code> usage string and <code>pkg</code> object,
+then print it on <code>console.error</code>.</p>
+
+<ul>
+<li><strong>showHelp.print(callable fn, object pkg) bool</strong></li>
+</ul>
+
+<p>Renders <code>usage</code> then print it on <code>console.error</code>.</p>
+
+<h2>
+<a id="more" class="anchor" href="#more" aria-hidden="true"><span class="octicon octicon-link"></span></a>More</h2>
+
+<ul>
+<li><a href="https://github.com/sindresorhus/multiline">https://github.com/sindresorhus/multiline</a></li>
+<li><a href="https://nodejs.org/api/process.html#process_process_argv">https://nodejs.org/api/process.html#process_process_argv</a></li>
+<li><a href="https://github.com/maboiteaspam/npi">https://github.com/maboiteaspam/npi</a></li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/maboiteaspam/show-help">Show-help</a> is maintained by <a href="https://github.com/maboiteaspam">maboiteaspam</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
