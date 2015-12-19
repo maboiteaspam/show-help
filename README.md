@@ -9,7 +9,11 @@ node module helpers to display help section given command line arguments
 ## Usage
 
 ```js
-require('show-help')(process.argv)
+function usage () {/*
+...some text...
+*/}
+var pkg = require('./package.json')
+require('show-help')(usage, process.argv, pkg)
 ```
 ## Usage
 
