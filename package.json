@@ -1,6 +1,6 @@
 {
   "name": "show-help",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "node module helpers to display help section given command line arguments",
   "main": "index.js",
   "scripts": {
@@ -21,9 +21,9 @@
   "author": "maboiteaspam",
   "license": "WTF",
   "dependencies": {
-    "multiline": "^1.0.2"
+    "multiline": ">=1.0.2 <2.0.0-0"
   },
   "devDependencies": {
-    "minimist": "^1.2.0"
+    "minimist": ">=1.2.0 <2.0.0-0"
   }
 }
