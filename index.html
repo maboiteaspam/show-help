@@ -27,7 +27,7 @@
 <h2>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
 
-<pre><code>npm i maboiteaspam/show-help --save
+<pre><code>npm i @maboiteaspam/show-help --save
 </code></pre>
 
 <h2>
@@ -37,7 +37,7 @@
 <span class="pl-c">...some text...</span>
 <span class="pl-c">*/</span>}
 <span class="pl-k">var</span> pkg <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./package.json<span class="pl-pds">'</span></span>)
-<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>show-help<span class="pl-pds">'</span></span>)(usage, <span class="pl-smi">process</span>.<span class="pl-smi">argv</span>, pkg)</pre></div>
+<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>@maboiteaspam/show-help<span class="pl-pds">'</span></span>)(usage, <span class="pl-smi">process</span>.<span class="pl-smi">argv</span>, pkg)</pre></div>
 
 <h2>
 <a id="usage-1" class="anchor" href="#usage-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
@@ -61,8 +61,9 @@
 <span class="pl-c">        ...</span>
 <span class="pl-c">*/</span>}
 <span class="pl-k">var</span> pkg <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./package.json<span class="pl-pds">'</span></span>)
-<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>show-help<span class="pl-pds">'</span></span>)(usage, <span class="pl-smi">process</span>.<span class="pl-smi">argv</span>, pkg)
-<span class="pl-c">//require('show-help').tpl('%name %version\n\t%description\n\n%usage')(usage, process.argv, pkg)</span>
+<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>@maboiteaspam/show-help<span class="pl-pds">'</span></span>)(usage, <span class="pl-smi">process</span>.<span class="pl-smi">argv</span>, pkg)
+<span class="pl-c">// require('@maboiteaspam/show-help')</span>
+<span class="pl-c">//  .tpl('%name %version\n\t%description\n\n%usage')(usage, process.argv, pkg)</span>
 </pre></div>
 
 <p>Which then, can be invoked in such fashion</p>
@@ -90,8 +91,9 @@ module-name --help</pre></div>
 <span class="pl-c">*/</span>}
 <span class="pl-k">var</span> pkg  <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./package.json<span class="pl-pds">'</span></span>)
 <span class="pl-k">var</span> argv <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>minimist<span class="pl-pds">'</span></span>)(<span class="pl-smi">process</span>.<span class="pl-smi">argv</span>.<span class="pl-c1">slice</span>(<span class="pl-c1">2</span>));
-<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>show-help<span class="pl-pds">'</span></span>).<span class="pl-en">tpl</span>(<span class="pl-s"><span class="pl-pds">'</span>%name %version<span class="pl-cce">\n\t</span>%description<span class="pl-cce">\n\n</span>%usage<span class="pl-pds">'</span></span>)(usage, <span class="pl-smi">argv</span>.<span class="pl-smi">h</span><span class="pl-k">||</span><span class="pl-smi">argv</span>.<span class="pl-smi">help</span>, pkg)
-<span class="pl-c">//require('show-help')(usage, argv.h||argv.help, pkg)</span></pre></div>
+<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>@maboiteaspam/show-help<span class="pl-pds">'</span></span>)
+    .<span class="pl-en">tpl</span>(<span class="pl-s"><span class="pl-pds">'</span>%name %version<span class="pl-cce">\n\t</span>%description<span class="pl-cce">\n\n</span>%usage<span class="pl-pds">'</span></span>)(usage, <span class="pl-smi">argv</span>.<span class="pl-smi">h</span><span class="pl-k">||</span><span class="pl-smi">argv</span>.<span class="pl-smi">help</span>, pkg)
+<span class="pl-c">//require('@maboiteaspam/show-help')(usage, argv.h||argv.help, pkg)</span></pre></div>
 
 <p>Which then, can be invoked in such fashion</p>
 
@@ -187,6 +189,7 @@ then print it on <code>console.error</code>.</p>
 <li><a href="https://github.com/sindresorhus/multiline">https://github.com/sindresorhus/multiline</a></li>
 <li><a href="https://nodejs.org/api/process.html#process_process_argv">https://nodejs.org/api/process.html#process_process_argv</a></li>
 <li><a href="https://github.com/maboiteaspam/npi">https://github.com/maboiteaspam/npi</a></li>
+<li><a href="https://github.com/maboiteaspam/set-verbosity">https://github.com/maboiteaspam/set-verbosity</a></li>
 </ul>
 
       <footer class="site-footer">
