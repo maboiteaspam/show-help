@@ -1,6 +1,6 @@
 {
   "name": "@maboiteaspam/show-help",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "node module helpers to display help section given command line arguments",
   "main": "index.js",
   "scripts": {
