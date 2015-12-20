@@ -4,7 +4,7 @@ node module helpers to display help section given command line arguments
 
 ## Install
 
-    npm i maboiteaspam/show-help --save
+    npm i @maboiteaspam/show-help --save
 
 ## Usage
 
@@ -13,7 +13,7 @@ function usage () {/*
 ...some text...
 */}
 var pkg = require('./package.json')
-require('show-help')(usage, process.argv, pkg)
+require('@maboiteaspam/show-help')(usage, process.argv, pkg)
 ```
 ## Usage
 
@@ -36,8 +36,9 @@ module name
         ...
 */}
 var pkg = require('./package.json')
-require('show-help')(usage, process.argv, pkg)
-//require('show-help').tpl('%name %version\n\t%description\n\n%usage')(usage, process.argv, pkg)
+require('@maboiteaspam/show-help')(usage, process.argv, pkg)
+// require('@maboiteaspam/show-help')
+//  .tpl('%name %version\n\t%description\n\n%usage')(usage, process.argv, pkg)
 
 ```
 
@@ -67,8 +68,9 @@ module name
 */}
 var pkg  = require('./package.json')
 var argv = require('minimist')(process.argv.slice(2));
-require('show-help').tpl('%name %version\n\t%description\n\n%usage')(usage, argv.h||argv.help, pkg)
-//require('show-help')(usage, argv.h||argv.help, pkg)
+require('@maboiteaspam/show-help')
+    .tpl('%name %version\n\t%description\n\n%usage')(usage, argv.h||argv.help, pkg)
+//require('@maboiteaspam/show-help')(usage, argv.h||argv.help, pkg)
 ```
 
 Which then, can be invoked in such fashion
