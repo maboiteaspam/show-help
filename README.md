@@ -144,3 +144,4 @@ Renders `usage` then print it on `console.error`.
 - https://github.com/sindresorhus/multiline
 - https://nodejs.org/api/process.html#process_process_argv
 - https://github.com/maboiteaspam/npi
+- https://github.com/maboiteaspam/set-verbosity
