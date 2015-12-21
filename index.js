@@ -2,6 +2,7 @@ var tpl = '%name %version\n%description\n%usage'
 var showHelp = function (fn, arg, pkg, code) {
   if (typeof(arg)==='object') showHelp.raw(fn, pkg, arg.join(' ')) && showHelp.die(code)
   else showHelp.parsed(fn, pkg, arg) && showHelp.die(code)
+  return showHelp
 }
 showHelp.tpl = function fromRawString (newTpl) {
   tpl = ''+newTpl; return showHelp;
