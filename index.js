@@ -23,8 +23,9 @@ showHelp.print = function printUsage (fn, pkg) {
   console.error(usage)
   return true
 }
-showHelp.die = function exitProcess (code) {
-  process.exit(code===undefined?0:code)
+showHelp.die = function exitProcess (reason, code) {
+  reason && console.error(reason);
+  process.exit(code===undefined?1:code)
 }
 
 module.exports = showHelp;
